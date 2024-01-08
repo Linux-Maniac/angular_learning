@@ -1,0 +1,25 @@
+
+  <table>
+    <tr>
+      <th>Index</th>
+      <th>Even/Odd</th>
+      <th>Room Type</th>
+      <th>Number of rooms</th>
+      <th>Room Amenities</th>
+      <th>Checkin Time</th>
+      <th>Checkout Time</th>
+      <th>Room Price</th>
+    </tr>
+    <tr *ngFor="let room of roomsCatalog; let e = even; let o = odd; let i=index;"
+        [ngClass]="e? 'odd' : 'even'">
+        <th>{{i+1}}</th>
+        <th>{{e? "Odd" : "Even"}}</th>
+        <th>{{room.roomType}}</th>
+        <th>{{room.roomNumbers}}</th>
+        <th>{{room.amenities}}</th>
+        <th>{{room.checkinTime | date}}</th>
+        <th>{{room.checkoutTime | date}}</th>
+        <th>{{room.price}}</th>
+    </tr>
+  </table>
+

@@ -1,0 +1,9 @@
+<h1>Welcome to {{ hotelName }}</h1>
+<div [hidden]="hideRooms">
+  Number of rooms:
+  <div [ngStyle]="{background : roomsCount.availableRooms>0? 'green' : 'tomato'}" [innerText]="numberOfRooms"></div>
+</div>
+<div *ngIf="roomsCount.availableRooms > 0">
+  <app-rooms-catalog [roomsCatalog]="roomsList"></app-rooms-catalog>
+</div>
+<button (click)="toggle()">Toggle</button>
